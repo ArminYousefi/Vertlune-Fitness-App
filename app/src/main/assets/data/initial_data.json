@@ -1,0 +1,32 @@
+{
+  "discovery_items": [
+    {
+      "mainTitle": "Sleeve",
+      "subTag": "Shirt",
+      "imageAssetPath": "images/discovery/sleeve.webp",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Long Sleeve",
+      "subTag": "Sweater",
+      "imageAssetPath": "images/discovery/long_sleeve.webp",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Align Tank",
+      "subTag": "Shirt",
+      "imageAssetPath": "images/discovery/long_sleeve.webp",
+      "isUserCreated": false
+    }
+  ],
+  "products": [
+    {
+      "id": "",
+      "title": "Surge Short",
+      "category": "Shirt",
+      "basePrice": 68.0,
+      "imageAssetPath": "images/products/surge_short.webp",
+      "description": "Designed for running, these shorts are lightweight and breathable."
+    }
+  ]
+}
