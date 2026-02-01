@@ -20,13 +20,10 @@ class DiscoveryRepositoryImpl @Inject constructor(
 ) : DiscoveryRepository {
 
     override fun getDiscoveryItems(): Flow<Resource<List<DiscoveryItem>>> =
-        discoveryDao.getAllDiscoveryItems()
-            .map { entities ->
+        discoveryDao.getAllDiscoveryItems().map { entities ->
                 val domainItems = entities.map { it.toDomain() }
                 Resource.Success(domainItems) as Resource<List<DiscoveryItem>>
-            }
-            .onStart { emit(Resource.Loading()) }
-            .catch { e ->
+            }.onStart { emit(Resource.Loading()) }.catch { e ->
                 emit(
                     Resource.Error(
                         uiMessage = "failed to load discoveries try again later",
@@ -37,6 +34,17 @@ class DiscoveryRepositoryImpl @Inject constructor(
 
     override suspend fun addDiscoveryItem(item: DiscoveryItem): Resource<Unit> {
         return try {
+            if (item.title.isBlank()) {
+                return Resource.Error(
+                    uiMessage = "title cannot be empty", devMessage = "Validation Error: Title is blank"
+                )
+            }
+            if (item.tag.isBlank()) {
+                return Resource.Error(
+                    uiMessage = "tag cannot be empty",
+                    devMessage = "Validation Error: Tag is blank"
+                )
+            }
             val entity = DiscoveryEntity(
                 mainTitle = item.title,
                 subTag = item.tag,
