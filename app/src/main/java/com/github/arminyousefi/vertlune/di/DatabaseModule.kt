@@ -32,4 +32,7 @@ object DatabaseModule {
     @Provides
     fun provideDiscoveryDao(db: AppDatabase) = db.discoveryDao()
 
+    @Provides
+    fun provideCartDao(db: AppDatabase) = db.cartDao()
+
 }

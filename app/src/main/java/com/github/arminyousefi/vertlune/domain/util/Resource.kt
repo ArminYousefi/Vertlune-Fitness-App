@@ -2,8 +2,9 @@ package com.github.arminyousefi.vertlune.domain.util
 
 sealed class Resource<T>(
     val data: T? = null,
-    val uiMessage: String? = null, // پیامی که به کاربر نمایش داده می‌شود
-    val devMessage: String? = null  // لاگ فنی برای عیب‌یابی
+    val uiMessage: String? = null,
+    val devMessage: String? = null
+
 ) {
     class Success<T>(data: T) : Resource<T>(data)
 

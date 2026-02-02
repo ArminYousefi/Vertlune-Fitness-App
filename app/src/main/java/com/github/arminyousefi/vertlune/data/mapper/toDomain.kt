@@ -1,7 +1,9 @@
 package com.github.arminyousefi.vertlune.data.mapper
 
+import com.github.arminyousefi.vertlune.data.local.entity.CartItemEntity
 import com.github.arminyousefi.vertlune.data.local.entity.DiscoveryEntity
 import com.github.arminyousefi.vertlune.data.local.entity.ProductEntity
+import com.github.arminyousefi.vertlune.domain.model.CartItem
 import com.github.arminyousefi.vertlune.domain.model.DiscoveryImageSource
 import com.github.arminyousefi.vertlune.domain.model.DiscoveryItem
 import com.github.arminyousefi.vertlune.domain.model.Product
@@ -12,7 +14,7 @@ fun DiscoveryEntity.toDomain(): DiscoveryItem {
     } else {
         DiscoveryImageSource.Asset(imageAssetPath ?: "default.webp")
     }
-    
+
     return DiscoveryItem(
         id = id,
         title = mainTitle,
@@ -33,3 +35,19 @@ fun ProductEntity.toDomain(): Product {
         rating = rating
     )
 }
+
+fun CartItemEntity.toDomain(): CartItem = CartItem(
+    productId = productId,
+    title = title,
+    price = price,
+    imagePath = imagePath,
+    quantity = quantity
+)
+
+fun CartItem.toEntity(): CartItemEntity = CartItemEntity(
+    productId = productId,
+    title = title,
+    price = price,
+    imagePath = imagePath,
+    quantity = quantity
+)

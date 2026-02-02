@@ -1,34 +1,54 @@
 package com.github.arminyousefi.vertlune.ui.theme
 
 import androidx.compose.material3.Typography
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.github.arminyousefi.vertlune.R
 
-// Set of Material typography styles to start with
-val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
-    )
-    /* Other default text styles to override
-    titleLarge = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
-        fontSize = 22.sp,
-        lineHeight = 28.sp,
-        letterSpacing = 0.sp
+val Playfair = FontFamily(
+    Font(R.font.playfair_display_regular, FontWeight.Normal),
+    Font(R.font.playfair_display_medium, FontWeight.Medium),
+    Font(R.font.playfair_display_bold, FontWeight.Bold)
+)
+
+val Montserrat = FontFamily(
+    Font(R.font.montserrat_regular, FontWeight.Normal),
+    Font(R.font.montserrat_medium, FontWeight.Medium)
+)
+
+val VertluneTypography = Typography(
+
+    displayLarge = TextStyle(
+        fontFamily = Playfair,
+        fontSize = 32.sp,
+        fontWeight = FontWeight.Bold
     ),
-    labelSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Medium,
-        fontSize = 11.sp,
-        lineHeight = 16.sp,
-        letterSpacing = 0.5.sp
+
+    titleLarge = TextStyle(
+        fontFamily = Playfair,
+        fontSize = 24.sp,
+        fontWeight = FontWeight.Medium
+    ),
+
+    titleMedium = TextStyle(
+        fontFamily = Playfair,
+        fontSize = 18.sp,
+        fontWeight = FontWeight.Medium
+    ),
+
+    bodyMedium = TextStyle(
+        fontFamily = Montserrat,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Normal
+    ),
+
+    labelMedium = TextStyle(
+        fontFamily = Montserrat,
+        fontSize = 14.sp,
+        fontWeight = FontWeight.Medium
     )
-    */
 )

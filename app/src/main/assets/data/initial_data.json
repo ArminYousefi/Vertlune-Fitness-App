@@ -1,32 +1,107 @@
 {
   "discovery_items": [
     {
-      "mainTitle": "Sleeve",
+      "mainTitle": "Blue Short",
+      "subTag": "Short",
+      "imageAssetPath": "drawable/blue_short.png",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Green T-Shirt",
       "subTag": "Shirt",
-      "imageAssetPath": "images/discovery/sleeve.webp",
+      "imageAssetPath": "drawable/green_tshirt.png",
       "isUserCreated": false
     },
     {
       "mainTitle": "Long Sleeve",
       "subTag": "Sweater",
-      "imageAssetPath": "images/discovery/long_sleeve.webp",
+      "imageAssetPath": "drawable/long_sleeve.png",
       "isUserCreated": false
     },
     {
-      "mainTitle": "Align Tank",
-      "subTag": "Shirt",
-      "imageAssetPath": "images/discovery/long_sleeve.webp",
+      "mainTitle": "Military Leg",
+      "subTag": "Pants",
+      "imageAssetPath": "drawable/military_leg.png",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Pink Top",
+      "subTag": "Top",
+      "imageAssetPath": "drawable/pink_top.png",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Red Short",
+      "subTag": "Short",
+      "imageAssetPath": "drawable/red_short.png",
+      "isUserCreated": false
+    },
+    {
+      "mainTitle": "Sweat Gray",
+      "subTag": "Sweater",
+      "imageAssetPath": "drawable/sweat_gray.png",
       "isUserCreated": false
     }
   ],
   "products": [
     {
-      "id": "",
-      "title": "Surge Short",
+      "id": "1",
+      "title": "Blue Short",
+      "category": "Short",
+      "price": 68.0,
+      "imageAssetPath": "drawable/blue_short.png",
+      "rating": 4.5,
+      "description": "Comfortable shorts for everyday wear."
+    },
+    {
+      "id": "2",
+      "title": "Green T-Shirt",
       "category": "Shirt",
-      "basePrice": 68.0,
-      "imageAssetPath": "images/products/surge_short.webp",
-      "description": "Designed for running, these shorts are lightweight and breathable."
+      "price": 55.0,
+      "imageAssetPath": "drawable/green_tshirt.png",
+      "rating": 4.5,
+      "description": "Soft cotton T-shirt for casual look."
+    },
+    {
+      "id": "3",
+      "title": "Long Sleeve",
+      "category": "Sweater",
+      "price": 75.0,
+      "imageAssetPath": "drawable/long_sleeve.png",
+      "rating": 3.5,
+      "description": "Warm and stylish long sleeve sweater."
+    },
+    {
+      "id": "4",
+      "title": "Military Leg",
+      "category": "Pants",
+      "price": 80.0,
+      "imageAssetPath": "drawable/military_leg.png",
+      "description": "Rugged pants for outdoor activities."
+    },
+    {
+      "id": "5",
+      "title": "Pink Top",
+      "category": "Top",
+      "price": 60.0,
+      "imageAssetPath": "drawable/pink_top.png",
+      "description": "Bright top for a fresh look."
+    },
+    {
+      "id": "6",
+      "title": "Red Short",
+      "category": "Short",
+      "price": 70.0,
+      "imageAssetPath": "drawable/red_short.png",
+      "description": "Sporty red shorts for workouts."
+    },
+    {
+      "id": "7",
+      "title": "Sweat Gray",
+      "category": "Sweater",
+      "price": 65.0,
+      "imageAssetPath": "drawable/sweat_gray.png",
+      "description": "Cozy gray sweater for winter."
     }
   ]
 }

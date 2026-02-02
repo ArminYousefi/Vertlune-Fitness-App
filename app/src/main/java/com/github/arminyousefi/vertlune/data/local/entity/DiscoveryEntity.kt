@@ -8,7 +8,7 @@ data class DiscoveryEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val mainTitle: String,
     val subTag: String,
-    val imageAssetPath: String?, // برای موارد پیش‌فرض
-    val imageBase64: String?,    // برای تصاویر کاربر
-    val isUserCreated: Boolean
+    val imageAssetPath: String? = null,
+    val imageBase64: String? = null,
+    val isUserCreated: Boolean = false
 )

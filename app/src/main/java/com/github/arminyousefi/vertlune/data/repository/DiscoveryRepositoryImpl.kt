@@ -21,16 +21,16 @@ class DiscoveryRepositoryImpl @Inject constructor(
 
     override fun getDiscoveryItems(): Flow<Resource<List<DiscoveryItem>>> =
         discoveryDao.getAllDiscoveryItems().map { entities ->
-                val domainItems = entities.map { it.toDomain() }
-                Resource.Success(domainItems) as Resource<List<DiscoveryItem>>
-            }.onStart { emit(Resource.Loading()) }.catch { e ->
-                emit(
-                    Resource.Error(
-                        uiMessage = "failed to load discoveries try again later",
-                        devMessage = "getDiscoveryItems DB Error: ${e.localizedMessage}"
-                    )
+            val domainItems = entities.map { it.toDomain() }
+            Resource.Success(domainItems) as Resource<List<DiscoveryItem>>
+        }.onStart { emit(Resource.Loading()) }.catch { e ->
+            emit(
+                Resource.Error(
+                    uiMessage = "failed to load discoveries try again later",
+                    devMessage = "getDiscoveryItems DB Error: ${e.localizedMessage}"
                 )
-            }
+            )
+        }
 
     override suspend fun addDiscoveryItem(item: DiscoveryItem): Resource<Unit> {
         return try {

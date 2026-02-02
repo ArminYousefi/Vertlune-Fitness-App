@@ -8,7 +8,6 @@ data class DiscoveryItem(
     val isUserCreated: Boolean
 )
 
-// یک Sealed Class برای مدیریت هوشمند منبع تصویر
 sealed class DiscoveryImageSource {
     data class Asset(val path: String) : DiscoveryImageSource()
     data class UserUpload(val base64: String) : DiscoveryImageSource()

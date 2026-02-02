@@ -62,4 +62,22 @@ class ProductRepositoryImpl @Inject constructor(
             )
         }
     }
+
+    override fun getBestSellers(minRating: Float): Flow<Resource<List<Product>>> =
+        productDao.getAllProducts()
+            .map { entities ->
+                val filtered = entities
+                    .map { it.toDomain() }
+                    .filter { it.rating >= minRating }
+                Resource.Success(filtered) as Resource<List<Product>>
+            }
+            .onStart { emit(Resource.Loading()) }
+            .catch { e ->
+                emit(
+                    Resource.Error(
+                        uiMessage = "Failed to fetch best sellers",
+                        devMessage = "getBestSellers failure: ${e.localizedMessage}"
+                    )
+                )
+            }
 }
